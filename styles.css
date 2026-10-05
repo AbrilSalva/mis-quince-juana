@@ -73,7 +73,7 @@ body::before{
 }
 .arch .star{font-size:70px;line-height:1;margin-bottom:16px}
 .arch h1{
-  font-family:"Poppins",serif;font-size:64px;line-height:.9;margin:0;letter-spacing:.06em
+  font-family:"Cormorant Garamond",serif;font-size:64px;line-height:.9;margin:0;letter-spacing:.06em
 }
 .eyebrow{letter-spacing:.42em;font-size:12px;margin-bottom:12px}
 .arch p{margin:16px 0 0;letter-spacing:.14em;font-size:13px}
@@ -115,7 +115,7 @@ body::before{
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px 24px}
 .info-card{min-height:210px}
 .info-card h2,.photos h2,.messages h2{
-  font-family:"Patrick Hand",cursive;letter-spacing:.05em;font-size:40px;margin:8px 0 8px
+  font-family:"Cormorant Garamond",cursive;letter-spacing:.05em;font-size:40px;margin:8px 0 8px
 }
 .info-card p{margin:5px 0;line-height:1.5}
 .info-card .icon{font-size:62px}
