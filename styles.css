@@ -71,7 +71,7 @@ body::before{
   box-shadow:var(--shadow);backdrop-filter:blur(6px);
   border:1px solid rgba(255,255,255,.6);
 }
-.arch .moon{font-size:54px;line-height:1;margin-bottom:16px}
+.arch .star{font-size:70px;line-height:1;margin-bottom:16px}
 .arch h1{
   font-family:"Cormorant Garamond",serif;font-size:64px;line-height:.9;margin:0;letter-spacing:.06em
 }
