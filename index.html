@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#173f35" />
+  <title>Juana · Mis quince</title>
+  <meta name="description" content="Invitación a los 15 de Juana — Viernes 13 de noviembre de 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="sky"></div>
+  <div class="stars stars-a"></div>
+  <div class="stars stars-b"></div>
+
+  <section id="cover" class="cover" aria-label="Portada">
+    <div class="cover-card arch">
+      <div class="moon">☾</div>
+      <div class="eyebrow">MIS QUINCE</div>
+      <h1>JUANA</h1>
+      <p>una noche para recordar</p>
+    </div>
+    <button id="enterBtn" class="outline-btn enter-btn">INGRESAR</button>
+  </section>
+
+  <main id="invite" class="invite hidden" aria-hidden="true">
+    <section class="hero section">
+      <div class="hero-arch arch">
+        <div class="moon">☾</div>
+        <div class="eyebrow">MIS QUINCE</div>
+        <h1>JUANA</h1>
+        <p>13 · 11 · 2026</p>
+      </div>
+
+      <div class="countdown-panel">
+        <div class="countdown" aria-label="Cuenta regresiva">
+          <div><strong id="days">00</strong><span>DÍAS</span></div>
+          <b>:</b>
+          <div><strong id="hours">00</strong><span>HORAS</span></div>
+          <b>:</b>
+          <div><strong id="minutes">00</strong><span>MINUTOS</span></div>
+          <b>:</b>
+          <div><strong id="seconds">00</strong><span>SEGUNDOS</span></div>
+        </div>
+        <a id="calendarLink" class="text-link" href="#" target="_blank" rel="noopener">agregar al calendario</a>
+      </div>
+
+      <div class="date-block">
+        <span class="weekday">VIERNES</span>
+        <span class="big-date">13</span>
+        <span class="month">NOVIEMBRE</span>
+        <span class="year">2026</span>
+      </div>
+    </section>
+
+    <section class="section intro">
+      <div class="quote-card">
+        <div class="heart">♡</div>
+        <p>Acompañame a celebrar este capítulo tan especial de mi vida, rodeada de las personas que más quiero.</p>
+        <strong>Juana</strong>
+      </div>
+
+      <div class="info-grid">
+        <article class="info-card left">
+          <div class="icon">★</div>
+          <h2>CUÁNDO</h2>
+          <p><strong>21:00 hs</strong></p>
+          <p class="muted">Viernes 13 de noviembre de 2026</p>
+        </article>
+
+        <article class="info-card right">
+          <div class="icon">★</div>
+          <h2>DÓNDE</h2>
+          <p>Av. Costanera Rafael Obligado 6340,<br>C1428, CABA</p>
+          <a class="pill" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/search/?api=1&query=Av.%20Costanera%20Rafael%20Obligado%206340%2C%20C1428%2C%20CABA">
+            ver en google maps
+          </a>
+        </article>
+
+        <article class="info-card left">
+          <div class="icon">★</div>
+          <h2>DRESS CODE</h2>
+          <p>Elegante</p>
+          <p class="muted">Evitar color verde</p>
+        </article>
+
+        <article class="info-card center full">
+          <div class="gift-icon">🎁</div>
+          <h2>REGALOS</h2>
+          <p>Nada es más importante que tu presencia, pero si querés tener un detalle conmigo, te dejo esta opción.</p>
+          <button id="giftBtn" class="pill">ver alias / CBU</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section photos">
+      <div class="section-icon">📷</div>
+      <h2>FOTOS</h2>
+      <p>Subí tus fotos con Juana para guardar todos los recuerdos de esta noche.</p>
+
+      <div class="qr-card">
+        <div id="qrcode" aria-label="QR para subir fotos"></div>
+      </div>
+
+      <p class="small">Si no pudiste escanear el QR</p>
+      <a id="driveButton" class="wide-btn" href="#" target="_blank" rel="noopener">SUBIR FOTOS</a>
+    </section>
+
+    <section class="section messages">
+      <div class="section-icon">✎</div>
+      <h2>MENSAJES<br>DE LOS INVITADOS</h2>
+      <p>Dejá tu mensaje especial para Juana</p>
+
+      <div class="filters" role="group" aria-label="Filtros de mensajes">
+        <button class="chip active" data-filter="todos">Todos</button>
+        <button class="chip" data-filter="familia">Familia</button>
+        <button class="chip" data-filter="amigos">Amigos</button>
+        <button class="chip" data-filter="otros">Otros</button>
+      </div>
+
+      <div id="messageList" class="message-list">
+        <article class="guest-message" data-category="familia">
+          <div><strong>Familia</strong><span>13/11/26</span></div>
+          <p>Que esta noche sea el comienzo de recuerdos inolvidables.</p>
+        </article>
+      </div>
+
+      <button id="messageBtn" class="wide-btn">ESCRIBIR MENSAJE</button>
+    </section>
+
+    <section class="section rsvp">
+      <div class="rsvp-shell">
+        <h2>CONFIRMAR<br>ASISTENCIA</h2>
+        <p class="deadline">Por favor confirmá antes del 30 de octubre</p>
+
+        <div class="rsvp-actions">
+          <button id="yesBtn" class="white-btn">Sí, puedo ir</button>
+          <button id="noBtn" class="white-btn">No podré asistir</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>JUANA · MIS QUINCE · 13.11.2026</p>
+    </footer>
+  </main>
+
+  <div id="modalBackdrop" class="modal-backdrop hidden" aria-hidden="true"></div>
+
+  <dialog id="giftModal" class="modal">
+    <button class="close" data-close aria-label="Cerrar">×</button>
+    <div class="modal-icon">🎁</div>
+    <h3>Datos para regalo</h3>
+    <p>Cuenta a nombre de: <strong>JUANA</strong></p>
+    <label>Alias
+      <div class="copy-row">
+        <input id="aliasInput" value="JUANA.15" readonly>
+        <button data-copy="#aliasInput">Copiar</button>
+      </div>
+    </label>
+    <label>CBU
+      <div class="copy-row">
+        <input id="cbuInput" value="0000000000000000000000" readonly>
+        <button data-copy="#cbuInput">Copiar</button>
+      </div>
+    </label>
+  </dialog>
+
+  <dialog id="messageModal" class="modal">
+    <button class="close" data-close aria-label="Cerrar">×</button>
+    <h3>Dejá tu mensaje</h3>
+    <form id="messageForm">
+      <div class="two-cols">
+        <label>Tu nombre
+          <input name="name" maxlength="50" required placeholder="Nombre">
+        </label>
+        <label>Categoría
+          <select name="category">
+            <option value="amigos">Amigos</option>
+            <option value="familia">Familia</option>
+            <option value="otros">Otros</option>
+          </select>
+        </label>
+      </div>
+      <label>Mensaje
+        <textarea name="message" maxlength="300" required placeholder="Escribí tu mensaje..."></textarea>
+      </label>
+      <div class="form-actions">
+        <button class="primary" type="submit">Enviar</button>
+        <button class="secondary" type="button" data-close>Cancelar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="yesModal" class="modal wide-modal">
+    <button class="close" data-close aria-label="Cerrar">×</button>
+    <h3>¡Qué alegría que vengas!</h3>
+    <form id="yesForm">
+      <div class="counter-wrap">
+        <span>Cantidad de invitados que confirmás</span>
+        <div class="counter">
+          <button type="button" id="minusGuest">−</button>
+          <strong id="guestCount">1</strong>
+          <button type="button" id="plusGuest">+</button>
+        </div>
+      </div>
+      <div id="guestFields"></div>
+      <label>Mensaje (opcional)
+        <textarea name="message" maxlength="300" placeholder="Dejale un mensaje privado a Juana"></textarea>
+      </label>
+      <button class="primary full-btn" type="submit">ENVIAR</button>
+    </form>
+  </dialog>
+
+  <dialog id="noModal" class="modal">
+    <button class="close" data-close aria-label="Cerrar">×</button>
+    <h3>Gracias por avisar</h3>
+    <form id="noForm">
+      <label>Nombre y apellido
+        <input name="name" required placeholder="Tu nombre">
+      </label>
+      <label>Mensaje (opcional)
+        <textarea name="message" maxlength="300" placeholder="Escribí tu mensaje (opcional)"></textarea>
+      </label>
+      <button class="primary full-btn" type="submit">ENVIAR</button>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
