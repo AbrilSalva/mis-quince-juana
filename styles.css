@@ -62,8 +62,8 @@ body::before{
     linear-gradient(180deg,rgba(10,42,35,.15),rgba(10,42,35,.45));
 }
 .arch{
-  width:min(700px,50vw);
-  aspect-ratio:.78;
+  width:min(100px,50vw);
+  aspect-ratio:.50;
   border-radius:170px 170px 24px 24px;
   background:rgba(237,245,240,.84);
   color:var(--green-950);
