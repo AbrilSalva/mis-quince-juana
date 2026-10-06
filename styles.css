@@ -27,28 +27,32 @@ body::before{
     radial-gradient(circle at 50% 55%,rgba(139,183,165,.15),transparent 42%),
     linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.16));
 }
-.sky{position:fixed;inset:0;z-index:-2;pointer-events:none;background:
-  radial-gradient(circle at 15% 20%,rgba(255,255,255,.12) 0 1px,transparent 1.5px),
-  radial-gradient(circle at 78% 12%,rgba(255,255,255,.22) 0 1px,transparent 1.7px),
-  radial-gradient(circle at 86% 63%,rgba(255,255,255,.13) 0 1px,transparent 1.4px),
-  radial-gradient(circle at 34% 75%,rgba(255,255,255,.16) 0 1px,transparent 1.5px);
-  background-size:95px 95px,140px 140px,120px 120px,170px 170px;
+.sky{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.10), transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.06), transparent 45%);
 }
 .stars{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.85}
 .stars::before,.stars::after{content:"";position:absolute;inset:-20%;background-repeat:repeat}
 .stars-a::before{
   background-image:
-    radial-gradient(circle,#fff 0 1px,transparent 1.4px),
-    radial-gradient(circle,rgba(255,255,255,.8) 0 1.5px,transparent 1.8px);
-  background-size:47px 47px,111px 111px;
-  animation:drift 28s linear infinite;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg stroke='%23ffffff' stroke-opacity='.75' stroke-linecap='round'%3E%3Cpath d='M24 13v22'/%3E%3Cpath d='M13 24h22'/%3E%3Cpath d='M17 17l14 14' stroke-width='.8'/%3E%3Cpath d='M31 17L17 31' stroke-width='.8'/%3E%3C/g%3E%3Ccircle cx='24' cy='24' r='1.4' fill='%23ffffff' fill-opacity='.95'/%3E%3C/svg%3E"),
+    radial-gradient(circle, rgba(255,255,255,.9) 0 1.1px, transparent 1.6px);
+  background-size: 120px 120px, 55px 55px;
+  background-position: 0 0, 20px 20px;
+  animation: drift 30s linear infinite;
 }
 .stars-b::after{
   background-image:
-    radial-gradient(circle,#d8f2e7 0 1px,transparent 1.3px),
-    radial-gradient(circle,rgba(255,255,255,.9) 0 2px,transparent 2.7px);
-  background-size:79px 79px,167px 167px;
-  animation:drift 45s linear infinite reverse;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cg stroke='%23dff7ee' stroke-opacity='.7' stroke-linecap='round'%3E%3Cpath d='M18 9v18'/%3E%3Cpath d='M9 18h18'/%3E%3C/g%3E%3Ccircle cx='18' cy='18' r='1.1' fill='%23ffffff' fill-opacity='.9'/%3E%3C/svg%3E"),
+    radial-gradient(circle, rgba(255,255,255,.8) 0 1px, transparent 1.5px);
+  background-size: 170px 170px, 80px 80px;
+  background-position: 35px 10px, 0 0;
+  animation: drift 45s linear infinite reverse;
 }
 @keyframes drift{to{transform:translate3d(70px,90px,0)}}
 .hidden{display:none!important}
