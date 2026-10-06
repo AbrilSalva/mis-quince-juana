@@ -189,7 +189,7 @@ footer{text-align:center;padding:30px;font-size:11px;letter-spacing:.18em;opacit
 
 @media (max-width: 768px){
   body{
-    background-image:url("./fondo-estrellas-verde.png");
+    background-image:url("./fondo-estrellas-verde.png.png");
     background-size:cover;
     background-position:center top;
     background-repeat:no-repeat;
