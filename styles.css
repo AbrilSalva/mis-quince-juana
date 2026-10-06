@@ -187,23 +187,12 @@ footer{text-align:center;padding:30px;font-size:11px;letter-spacing:.18em;opacit
 }
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
-@media(max-width:620px){
-  .section{padding:58px 20px}
-  .hero{padding-top:26px}
-  .countdown-panel{margin:30px -20px 0;padding:22px 10px}
-  .countdown{gap:5px}
-  .countdown div{min-width:51px}
-  .countdown strong{font-size:34px}
-  .countdown b{font-size:28px}
-  .hero-arch h1{font-size:58px}
-  .arch .moon{font-size:44px}
-  .date-block{gap:0 7px}
-  .weekday,.month{font-size:13px}
-  .big-date{font-size:78px}
-  .info-grid{grid-template-columns:1fr;gap:20px}
-  .info-card,.info-card.right{text-align:center;min-height:0;padding:20px 0}
-  .info-card.full{grid-column:auto}
-  .two-cols{grid-template-columns:1fr}
-  .modal{padding:30px 20px}
-  .rsvp h2{font-size:46px}
+@media (max-width: 768px){
+  body{
+    background-image:url("./fondo-estrellas-verde.png");
+    background-size:cover;
+    background-position:center top;
+    background-repeat:no-repeat;
+    background-attachment:scroll;
+  }
 }
