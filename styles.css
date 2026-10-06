@@ -19,11 +19,9 @@ body{
   overflow-x:hidden;
 
   background-image:url("./fondo-estrellas-verde.png");
+  background-size:cover;
+  background-position:center center;
   background-repeat:no-repeat;
-  background-position:center top;
-
-  /* Mantiene mejor la proporción del fondo */
-  background-size:auto 100vh;
   background-attachment:fixed;
 }
 /* Apaga completamente el fondo y las estrellas animadas anteriores */
