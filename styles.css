@@ -37,7 +37,7 @@ body::before{
     radial-gradient(circle at 50% 50%, rgba(255,255,255,.05), transparent 55%),
     linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
 }
-.stars{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.85}
+.stars{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.65}
 .stars::before,.stars::after{content:"";position:absolute;inset:-20%;background-repeat:repeat}
 .stars-a::before{
   content:"";
@@ -50,7 +50,7 @@ body::before{
   background-size: 150px 150px, 70px 70px, 190px 190px;
   background-position: 0 0, 25px 30px, 80px 60px;
   background-repeat: repeat;
-  opacity: .8;
+  opacity: .65;
   animation: drift 55s linear infinite;
 }
 .stars-b::after{
