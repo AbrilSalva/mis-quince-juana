@@ -14,28 +14,30 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   color:var(--white);
-
-  background-image: url("fondo-estrellas-verde.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
   font-family:"Montserrat",sans-serif;
   min-height:100vh;
   overflow-x:hidden;
+
+  background-color:#123c32;
+  background-image:url("./fondo-estrellas-verde.png");
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-size:cover;
+  background-attachment:fixed;
 }
-body::before{
-  content:"";
-  position:fixed;inset:0;pointer-events:none;z-index:-3;
-  background:
-    radial-gradient(circle at 50% 0%,rgba(210,233,224,.34),transparent 36%),
-    radial-gradient(circle at 50% 55%,rgba(139,183,165,.15),transparent 42%),
-    linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.16));
-  }
+
+/* Apaga completamente el fondo y las estrellas animadas anteriores */
+body::before,
 .sky,
-.stars{
-  display:none;
+.stars,
+.stars::before,
+.stars::after,
+.stars-a::before,
+.stars-b::after{
+  display:none !important;
+  content:none !important;
+  background:none !important;
+  animation:none !important;
 }
 @keyframes drift{to{transform:translate3d(70px,90px,0)}}
 .hidden{display:none!important}
