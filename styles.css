@@ -18,11 +18,7 @@ body{
   min-height:100vh;
   overflow-x:hidden;
 
-  background-image:url("./fondo-estrellas-verde.png");
-  background-size:cover;
-  background-position:center center;
-  background-repeat:no-repeat;
-  background-attachment:fixed;
+  background:#123c32;
 }
 .enter-btn{
   width:100%;
