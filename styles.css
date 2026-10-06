@@ -24,6 +24,16 @@ body{
   background-repeat:no-repeat;
   background-attachment:fixed;
 }
+.enter-btn{
+  width:100%;
+  max-width:520px;
+
+  margin-left:auto;
+  margin-right:auto;
+
+  padding:15px 28px;
+  box-sizing:border-box;
+}
 /* Apaga completamente el fondo y las estrellas animadas anteriores */
 body::before,
 .sky,
