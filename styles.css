@@ -32,17 +32,7 @@ body::before{
     radial-gradient(circle at 50% 0%,rgba(210,233,224,.34),transparent 36%),
     radial-gradient(circle at 50% 55%,rgba(139,183,165,.15),transparent 42%),
     linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.16));
-}
-.sky{
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 50% 20%, rgba(255,255,255,.12), transparent 35%),
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,.05), transparent 55%),
-    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-}
+  }
 .sky,
 .stars{
   display:none;
