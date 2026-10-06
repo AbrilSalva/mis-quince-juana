@@ -26,19 +26,6 @@ body{
   overflow-x:hidden;
 }
 
-/* Apaga completamente el fondo y las estrellas animadas anteriores */
-body::before,
-.sky,
-.stars,
-.stars::before,
-.stars::after,
-.stars-a::before,
-.stars-b::after{
-  display:none !important;
-  content:none !important;
-  background:none !important;
-  animation:none !important;
-}
 @keyframes drift{to{transform:translate3d(70px,90px,0)}}
 .hidden{display:none!important}
 
