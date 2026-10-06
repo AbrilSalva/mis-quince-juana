@@ -43,35 +43,9 @@ body::before{
     radial-gradient(circle at 50% 50%, rgba(255,255,255,.05), transparent 55%),
     linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
 }
-.stars{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.65}
-.stars::before,.stars::after{content:"";position:absolute;inset:-20%;background-repeat:repeat}
-.stars-a::before{
-  content:"";
-  position:absolute;
-  inset:-20%;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg stroke='white' stroke-opacity='.55' stroke-linecap='round'%3E%3Cpath d='M40 28v24'/%3E%3Cpath d='M28 40h24'/%3E%3Cpath d='M32 32l16 16' stroke-width='.7'/%3E%3Cpath d='M48 32L32 48' stroke-width='.7'/%3E%3C/g%3E%3Ccircle cx='40' cy='40' r='1.3' fill='white' fill-opacity='.95'/%3E%3C/svg%3E"),
-    radial-gradient(circle, rgba(255,255,255,.85) 0 1px, transparent 1.8px),
-    radial-gradient(circle, rgba(255,255,255,.35) 0 2px, transparent 4px);
-  background-size: 150px 150px, 70px 70px, 190px 190px;
-  background-position: 0 0, 25px 30px, 80px 60px;
-  background-repeat: repeat;
-  opacity: .65;
-  animation: drift 55s linear infinite;
-}
-.stars-b::after{
-  content:"";
-  position:absolute;
-  inset:-20%;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg stroke='white' stroke-opacity='.38' stroke-linecap='round'%3E%3Cpath d='M30 22v16'/%3E%3Cpath d='M22 30h16'/%3E%3C/g%3E%3Ccircle cx='30' cy='30' r='1.1' fill='white' fill-opacity='.85'/%3E%3C/svg%3E"),
-    radial-gradient(circle, rgba(255,255,255,.55) 0 1px, transparent 1.7px),
-    radial-gradient(circle, rgba(255,255,255,.18) 0 3px, transparent 5px);
-  background-size: 200px 200px, 95px 95px, 230px 230px;
-  background-position: 40px 20px, 0 0, 110px 80px;
-  background-repeat: repeat;
-  opacity: .55;
-  animation: drift 80s linear infinite reverse;
+.sky,
+.stars{
+  display:none;
 }
 @keyframes drift{to{transform:translate3d(70px,90px,0)}}
 .hidden{display:none!important}
