@@ -14,15 +14,16 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   color:var(--white);
+
+  background-image: url("fondo-estrellas-verde.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
   font-family:"Montserrat",sans-serif;
   min-height:100vh;
   overflow-x:hidden;
-
-  background-image:url("./fondo-estrellas-verde.png");
-  background-repeat:no-repeat;
-  background-position:center top;
-  background-size:cover;
-  background-attachment:fixed;
 }
 
 /* Apaga completamente el fondo y las estrellas animadas anteriores */
