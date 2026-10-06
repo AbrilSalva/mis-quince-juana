@@ -204,12 +204,30 @@ footer{text-align:center;padding:30px;font-size:11px;letter-spacing:.18em;opacit
 }
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
-@media (max-width: 768px){
+@media (max-width:768px){
+
   body{
     background-image:url("./fondo-estrellas-verde.png");
     background-size:cover;
     background-position:center top;
     background-repeat:no-repeat;
     background-attachment:scroll;
+  }
+
+  .cover{
+    width:100%;
+    max-width:none;
+    min-height:100svh;
+    padding:24px 18px;
+  }
+
+  .enter-btn{
+    width:100%;
+    max-width:100%;
+  }
+
+  .invite{
+    width:100%;
+    max-width:none;
   }
 }
