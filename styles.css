@@ -14,8 +14,14 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   color:var(--white);
-  background:linear-gradient(180deg,#254f45 0%,#163d34 46%,#0d2c26 100%);
-  font-family:"Poppins",sans-serif;
+
+  background-image: url("fondo-estrellas-verde.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  font-family:"Montserrat",sans-serif;
   min-height:100vh;
   overflow-x:hidden;
 }
