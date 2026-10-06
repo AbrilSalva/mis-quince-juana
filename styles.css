@@ -42,12 +42,20 @@ body::before,
 .hidden{display:none!important}
 
 .cover{
+  width:100%;
+  max-width:600px;
   min-height:100svh;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:24px;padding:32px 24px;
-  background:
-    radial-gradient(circle at 50% 38%,rgba(214,238,226,.18),transparent 30%),
-    linear-gradient(180deg,rgba(10,42,35,.15),rgba(10,42,35,.45));
+
+  margin:0 auto;
+  padding:32px 24px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+
+  background:transparent;
 }
 .arch{
   width:min(300px,70vw);
