@@ -203,6 +203,18 @@ footer{text-align:center;padding:30px;font-size:11px;letter-spacing:.18em;opacit
 }
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
+.section-icon-img{
+  width:56px;
+  height:56px;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 14px auto;
+}
+
+@media (max-width:768px){
+  /* tus reglas de celular */
+}
+
 @media (max-width:768px){
 
   .cover{
