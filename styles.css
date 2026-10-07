@@ -329,15 +329,40 @@ footer{text-align:center;padding:30px;font-size:11px;letter-spacing:.18em;opacit
 }
 
 /* Confirmación de asistencia */
-.rsvp{
+.rsvp h2{
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:clamp(42px, 10vw, 64px);
+  line-height:.92;
+
+  margin:0 auto;
+  width:100%;
+  max-width:100%;
+
   text-align:center;
+  overflow-wrap:break-word;
 }
 
 .rsvp-shell{
   width:100%;
   max-width:520px;
-  margin-left:auto;
-  margin-right:auto;
+  margin:0 auto;
+
+  padding:42px 22px;
+  box-sizing:border-box;
+
+  overflow:hidden;
+}
+@media (max-width:768px){
+
+  .rsvp h2{
+    font-size:clamp(40px, 12vw, 58px);
+  }
+
+  .rsvp-shell{
+    padding:38px 18px;
+  }
+
 }
 
 /* ===== CELULAR ===== */
