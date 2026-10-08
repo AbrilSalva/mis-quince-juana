@@ -45,19 +45,18 @@ function doPost(e) {
   ]);
 
   MailApp.sendEmail({
-    to: "misquincejuana26@gmail.com",
-    subject: "✅ Nueva confirmación - 15 de Juana",
-    htmlBody: `
-      <h2>Nueva confirmación de asistencia</h2>
+  to: EMAIL_DESTINO,
+  subject: "✅ Nueva confirmación - 15 de Juana",
+  htmlBody: `
+    <h2>Nueva confirmación de asistencia</h2>
 
-      <p><strong>Respuesta:</strong> Sí, puedo ir</p>
-      <p><strong>Cantidad:</strong> ${data.guestCount || 1}</p>
-      <p><strong>Invitados:</strong> ${names}</p>
-      <p><strong>Restricciones:</strong> ${restrictions}</p>
-      <p><strong>Mensaje:</strong> ${data.message || "-"}</p>
-    `
-  });
-}
+    <p><strong>Respuesta:</strong> Sí, puedo ir</p>
+    <p><strong>Cantidad:</strong> ${data.guestCount || 1}</p>
+    <p><strong>Invitados:</strong> ${names}</p>
+    <p><strong>Restricciones:</strong> ${restrictions}</p>
+    <p><strong>Mensaje:</strong> ${data.message || "-"}</p>
+  `
+});
 
     if (data.type === "rsvp_no") {
 
@@ -77,17 +76,16 @@ function doPost(e) {
   ]);
 
   MailApp.sendEmail({
-    to: "misquincejuana26@gmail.com",
-    subject: "❌ No podrá asistir - 15 de Juana",
-    htmlBody: `
-      <h2>Respuesta de invitado</h2>
+  to: EMAIL_DESTINO,
+  subject: "❌ No podrá asistir - 15 de Juana",
+  htmlBody: `
+    <h2>Respuesta de invitado</h2>
 
-      <p><strong>Respuesta:</strong> No podré asistir</p>
-      <p><strong>Nombre:</strong> ${data.name || "-"}</p>
-      <p><strong>Mensaje:</strong> ${data.message || "-"}</p>
-    `
-  });
-}
+    <p><strong>Respuesta:</strong> No podré asistir</p>
+    <p><strong>Nombre:</strong> ${data.name || "-"}</p>
+    <p><strong>Mensaje:</strong> ${data.message || "-"}</p>
+  `
+});
 
     return ContentService.createTextOutput(JSON.stringify({ok:true}))
       .setMimeType(ContentService.MimeType.JSON);
