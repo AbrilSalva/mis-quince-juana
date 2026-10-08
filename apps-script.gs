@@ -1,5 +1,4 @@
 const EMAIL_DESTINO = "misquincejuana26@gmail.com";
-/**
  * BACKEND GRATUITO PARA MENSAJES + RSVP
  * 1) Creá un Google Sheet vacío.
  * 2) Extensiones > Apps Script.
@@ -10,16 +9,7 @@ const EMAIL_DESTINO = "misquincejuana26@gmail.com";
  */
 
 function doPost(e) {
-  try {
-    const data = JSON.parse(e.postData.contents);
-    const ss = SpreadsheetApp.getActiveSpreadsheet();
-
-    if (data.type === "message") {
-      const sh = getOrCreateSheet_(ss, "Mensajes", ["Fecha","Nombre","Categoría","Mensaje"]);
-      sh.appendRow([new Date(), data.name || "", data.category || "", data.message || ""]);
-    }
-
-    if (data.type === "rsvp_yes") {
+  if (data.type === "rsvp_yes") {
 
   const sh = getOrCreateSheet_(
     ss,
@@ -45,18 +35,19 @@ function doPost(e) {
   ]);
 
   MailApp.sendEmail({
-  to: EMAIL_DESTINO,
-  subject: "✅ Nueva confirmación - 15 de Juana",
-  htmlBody: `
-    <h2>Nueva confirmación de asistencia</h2>
+    to: EMAIL_DESTINO,
+    subject: "✅ Nueva confirmación - 15 de Juana",
+    htmlBody: `
+      <h2>Nueva confirmación de asistencia</h2>
 
-    <p><strong>Respuesta:</strong> Sí, puedo ir</p>
-    <p><strong>Cantidad:</strong> ${data.guestCount || 1}</p>
-    <p><strong>Invitados:</strong> ${names}</p>
-    <p><strong>Restricciones:</strong> ${restrictions}</p>
-    <p><strong>Mensaje:</strong> ${data.message || "-"}</p>
-  `
-});
+      <p><strong>Respuesta:</strong> Sí, puedo ir</p>
+      <p><strong>Cantidad:</strong> ${data.guestCount || 1}</p>
+      <p><strong>Invitados:</strong> ${names}</p>
+      <p><strong>Restricciones:</strong> ${restrictions}</p>
+      <p><strong>Mensaje:</strong> ${data.message || "-"}</p>
+    `
+  });
+}
 
     if (data.type === "rsvp_no") {
 
@@ -76,17 +67,17 @@ function doPost(e) {
   ]);
 
   MailApp.sendEmail({
-  to: EMAIL_DESTINO,
-  subject: "❌ No podrá asistir - 15 de Juana",
-  htmlBody: `
-    <h2>Respuesta de invitado</h2>
+    to: EMAIL_DESTINO,
+    subject: "❌ No podrá asistir - 15 de Juana",
+    htmlBody: `
+      <h2>Respuesta de invitado</h2>
 
-    <p><strong>Respuesta:</strong> No podré asistir</p>
-    <p><strong>Nombre:</strong> ${data.name || "-"}</p>
-    <p><strong>Mensaje:</strong> ${data.message || "-"}</p>
-  `
-});
-
+      <p><strong>Respuesta:</strong> No podré asistir</p>
+      <p><strong>Nombre:</strong> ${data.name || "-"}</p>
+      <p><strong>Mensaje:</strong> ${data.message || "-"}</p>
+    `
+  });
+}
     return ContentService.createTextOutput(JSON.stringify({ok:true}))
       .setMimeType(ContentService.MimeType.JSON);
   } catch (err) {
