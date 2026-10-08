@@ -7,13 +7,6 @@ const EMAIL_DESTINO = "misquincejuana26@gmail.com";
  * 5) Ejecutar como: vos. Acceso: Cualquier persona.
  * 6) Copiá la URL terminada en /exec y pegala en CONFIG.appsScriptUrl de app.js
  */
-const CONFIG = {
-  eventDate: "2026-11-13T21:00:00-03:00",
-  eventTitle: "Mis 15 de Juana",
-  eventLocation: "Av. Costanera Rafael Obligado 6340, C1428, CABA",
-  driveUrl: "REEMPLAZAR_CON_LINK_DE_GOOGLE_DRIVE",
-  appsScriptUrl: "1EF2DrHybL8M5Murcx_shsMQ67jgA38KUd69KAWGMuG"
-};
 
 function doPost(e) {
   if (data.type === "rsvp_yes") {
