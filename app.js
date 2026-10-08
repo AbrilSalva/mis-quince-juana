@@ -3,7 +3,7 @@ const CONFIG = {
   eventTitle: "Mis 15 de Juana",
   eventLocation: "Av. Costanera Rafael Obligado 6340, C1428, CABA",
   driveUrl: "REEMPLAZAR_CON_LINK_DE_GOOGLE_DRIVE",
-  appsScriptUrl: "1EF2DrHybL8M5Murcx_shsMQ67jgA38KUd69KAWGMuG"
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbzoG0CxNpemGHbX4_sPlhXDZMZ25M04mKUoiM0ycbui4HcuzPoAMnrqzWNewstKC4zy/exec"
 };
 
 const $ = (q, root=document) => root.querySelector(q);
