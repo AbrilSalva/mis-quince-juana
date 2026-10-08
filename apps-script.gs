@@ -60,9 +60,34 @@ function doPost(e) {
 }
 
     if (data.type === "rsvp_no") {
-      const sh = getOrCreateSheet_(ss, "RSVP", ["Fecha","Respuesta","Cantidad","Invitados","Restricciones","Mensaje"]);
-      sh.appendRow([new Date(), "NO", 0, data.name || "", "", data.message || ""]);
-    }
+
+  const sh = getOrCreateSheet_(
+    ss,
+    "RSVP",
+    ["Fecha","Respuesta","Cantidad","Invitados","Restricciones","Mensaje"]
+  );
+
+  sh.appendRow([
+    new Date(),
+    "NO",
+    0,
+    data.name || "",
+    "",
+    data.message || ""
+  ]);
+
+  MailApp.sendEmail({
+    to: EMAIL_DESTINO,
+    subject: "❌ No podrá asistir - 15 de Juana",
+    htmlBody: `
+      <h2>Respuesta de invitado</h2>
+
+      <p><strong>Respuesta:</strong> No podré asistir</p>
+      <p><strong>Nombre:</strong> ${data.name || "-"}</p>
+      <p><strong>Mensaje:</strong> ${data.message || "-"}</p>
+    `
+  });
+}
 
     return ContentService.createTextOutput(JSON.stringify({ok:true}))
       .setMimeType(ContentService.MimeType.JSON);
