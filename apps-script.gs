@@ -20,11 +20,44 @@ function doPost(e) {
     }
 
     if (data.type === "rsvp_yes") {
-      const sh = getOrCreateSheet_(ss, "RSVP", ["Fecha","Respuesta","Cantidad","Invitados","Restricciones","Mensaje"]);
-      const names = (data.guests || []).map(g => g.name || "").join(" | ");
-      const restrictions = (data.guests || []).map(g => `${g.name || ""}: ${g.restrictions || "-"}`).join(" | ");
-      sh.appendRow([new Date(), "SI", data.guestCount || 1, names, restrictions, data.message || ""]);
-    }
+
+  const sh = getOrCreateSheet_(
+    ss,
+    "RSVP",
+    ["Fecha","Respuesta","Cantidad","Invitados","Restricciones","Mensaje"]
+  );
+
+  const names = (data.guests || [])
+    .map(g => g.name || "")
+    .join(" | ");
+
+  const restrictions = (data.guests || [])
+    .map(g => `${g.name || ""}: ${g.restrictions || "-"}`)
+    .join(" | ");
+
+  sh.appendRow([
+    new Date(),
+    "SI",
+    data.guestCount || 1,
+    names,
+    restrictions,
+    data.message || ""
+  ]);
+
+  MailApp.sendEmail({
+    to: EMAIL_DESTINO,
+    subject: "✅ Nueva confirmación - 15 de Juana",
+    htmlBody: `
+      <h2>Nueva confirmación de asistencia</h2>
+
+      <p><strong>Respuesta:</strong> Sí, puedo ir</p>
+      <p><strong>Cantidad:</strong> ${data.guestCount || 1}</p>
+      <p><strong>Invitados:</strong> ${names}</p>
+      <p><strong>Restricciones:</strong> ${restrictions}</p>
+      <p><strong>Mensaje:</strong> ${data.message || "-"}</p>
+    `
+  });
+}
 
     if (data.type === "rsvp_no") {
       const sh = getOrCreateSheet_(ss, "RSVP", ["Fecha","Respuesta","Cantidad","Invitados","Restricciones","Mensaje"]);
