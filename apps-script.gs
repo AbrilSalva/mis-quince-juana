@@ -1,4 +1,4 @@
-const EMAIL_DESTINO = "misquincejuana26@gmail.com";
+const EMAIL_DESTINO = "abrusalva1@gmail.com";
  * BACKEND GRATUITO PARA MENSAJES + RSVP
  * 1) Creá un Google Sheet vacío.
  * 2) Extensiones > Apps Script.
