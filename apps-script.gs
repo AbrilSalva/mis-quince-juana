@@ -77,7 +77,7 @@ function doPost(e) {
   ]);
 
   MailApp.sendEmail({
-    to: misquincejuana26@gmail.com,
+    to: "misquincejuana26@gmail.com",
     subject: "❌ No podrá asistir - 15 de Juana",
     htmlBody: `
       <h2>Respuesta de invitado</h2>
