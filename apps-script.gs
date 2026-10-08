@@ -1,3 +1,4 @@
+const EMAIL_DESTINO = "misquincejuana26@gmail.com";
 /**
  * BACKEND GRATUITO PARA MENSAJES + RSVP
  * 1) Creá un Google Sheet vacío.
