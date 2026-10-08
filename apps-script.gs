@@ -45,7 +45,7 @@ function doPost(e) {
   ]);
 
   MailApp.sendEmail({
-    to: EMAIL_DESTINO,
+    to: misquincejuana26@gmail.com,
     subject: "✅ Nueva confirmación - 15 de Juana",
     htmlBody: `
       <h2>Nueva confirmación de asistencia</h2>
@@ -77,7 +77,7 @@ function doPost(e) {
   ]);
 
   MailApp.sendEmail({
-    to: EMAIL_DESTINO,
+    to: misquincejuana26@gmail.com,
     subject: "❌ No podrá asistir - 15 de Juana",
     htmlBody: `
       <h2>Respuesta de invitado</h2>
