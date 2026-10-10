@@ -2,7 +2,7 @@ const CONFIG = {
   eventDate: "2026-11-13T21:00:00-03:00",
   eventTitle: "Mis 15 de Juana",
   eventLocation: "Av. Costanera Rafael Obligado 6340, C1428, CABA",
-  driveUrl: "REEMPLAZAR_CON_LINK_DE_GOOGLE_DRIVE",
+  driveUrl: "https://drive.google.com/drive/folders/1Gx8s2S-ACKwheUST3d0MGj7I2ZJj8bUM?usp=share_link",
   appsScriptUrl: "https://script.google.com/macros/s/AKfycbwlNdse32S5I_zQmmyoYxXP_sjoSkKx1kiEVS6pIbIxgEAHh34kqZxPw--1-hjKLeMq/exec"
 };
 
