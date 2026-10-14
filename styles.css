@@ -442,11 +442,11 @@ footer{text-align:center;padding:30px;font-size:11px;letter-spacing:.18em;opacit
 }
 .music-toggle{
   position:fixed;
-  right:24px;
-  bottom:24px;
+  right:28px;
+  bottom:28px;
 
-  width:58px;
-  height:58px;
+  width:62px;
+  height:62px;
 
   border:none;
   border-radius:50%;
