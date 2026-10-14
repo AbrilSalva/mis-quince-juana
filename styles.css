@@ -466,13 +466,4 @@ footer{text-align:center;padding:30px;font-size:11px;letter-spacing:.18em;opacit
   cursor:pointer;
   z-index:9999;
 }
-
-.music-toggle:hover{
-  transform:scale(1.05);
-}
-
-.music-toggle.hidden{
-  display:none;
-}
-
 }
