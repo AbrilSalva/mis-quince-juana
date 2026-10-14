@@ -197,18 +197,28 @@
     <button class="close" data-close aria-label="Cerrar">×</button>
     <h3>¡Qué alegría que vengas!</h3>
     <form id="yesForm">
-      <div class="counter-wrap">
-        <span>Cantidad de invitados que confirmás</span>
-        <div class="counter">
-          <button type="button" id="minusGuest">−</button>
-          <strong id="guestCount">1</strong>
-          <button type="button" id="plusGuest">+</button>
-        </div>
-      </div>
-      <div id="guestFields"></div>
-      <label>Mensaje (opcional)
-        <textarea name="message" maxlength="300" placeholder="Dejale un mensaje privado a Juana"></textarea>
-      </label>
+      <label>Nombre y apellido
+  <input
+    name="name"
+    required
+    placeholder="Nombre completo"
+  >
+</label>
+
+<label>Restricciones alimentarias / Aclaraciones
+  <input
+    name="restrictions"
+    placeholder="Ej: vegetariano, celíaco, etc."
+  >
+</label>
+
+<label>Mensaje (opcional)
+  <textarea
+    name="message"
+    maxlength="300"
+    placeholder="Dejale un mensaje privado a Juana"
+  ></textarea>
+</label>
       <button class="primary full-btn" type="submit">ENVIAR</button>
     </form>
   </dialog>
