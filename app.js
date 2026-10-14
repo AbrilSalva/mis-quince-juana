@@ -19,12 +19,34 @@ $("#enterBtn").addEventListener("click", () => {
   window.scrollTo({top:0,behavior:"smooth"});
 
   const music = document.getElementById("bgMusic");
+  const musicToggle = document.getElementById("musicToggle");
 
   music.volume = 0.35;
 
-  music.play().catch(() => {
-    console.log("El navegador bloqueó la reproducción automática.");
+  music.play().then(() => {
+    musicToggle.classList.remove("hidden");
+    musicToggle.textContent = "❚❚";
+    musicToggle.setAttribute("aria-label","Pausar música");
+  }).catch(() => {
+    musicToggle.classList.remove("hidden");
+    musicToggle.textContent = "▶";
+    musicToggle.setAttribute("aria-label","Reproducir música");
   });
+});
+
+const music = document.getElementById("bgMusic");
+const musicToggle = document.getElementById("musicToggle");
+
+musicToggle.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    musicToggle.textContent = "❚❚";
+    musicToggle.setAttribute("aria-label","Pausar música");
+  } else {
+    music.pause();
+    musicToggle.textContent = "▶";
+    musicToggle.setAttribute("aria-label","Reproducir música");
+  }
 });
 
 function updateCountdown(){
