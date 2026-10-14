@@ -17,6 +17,14 @@ $("#enterBtn").addEventListener("click", () => {
   invite.classList.remove("hidden");
   invite.setAttribute("aria-hidden","false");
   window.scrollTo({top:0,behavior:"smooth"});
+
+  const music = document.getElementById("bgMusic");
+
+  music.volume = 0.35;
+
+  music.play().catch(() => {
+    console.log("El navegador bloqueó la reproducción automática.");
+  });
 });
 
 function updateCountdown(){
