@@ -15,25 +15,23 @@ const invite = $("#invite");
 $("#enterBtn").addEventListener("click", () => {
   cover.classList.add("hidden");
   invite.classList.remove("hidden");
-  invite.setAttribute("aria-hidden","false");
-  window.scrollTo({top:0,behavior:"smooth"});
+  invite.setAttribute("aria-hidden", "false");
+  window.scrollTo({ top: 0, behavior: "smooth" });
 
   const music = document.getElementById("bgMusic");
   const musicToggle = document.getElementById("musicToggle");
 
- music.volume = 0.35;
-music.currentTime = 30;
-
-music.play().then(() => {
+  music.volume = 0.35;
+  music.currentTime = 30;
 
   music.play().then(() => {
     musicToggle.classList.remove("hidden");
     musicToggle.textContent = "❚❚";
-    musicToggle.setAttribute("aria-label","Pausar música");
+    musicToggle.setAttribute("aria-label", "Pausar música");
   }).catch(() => {
     musicToggle.classList.remove("hidden");
     musicToggle.textContent = "▶";
-    musicToggle.setAttribute("aria-label","Reproducir música");
+    musicToggle.setAttribute("aria-label", "Reproducir música");
   });
 });
 
@@ -44,14 +42,13 @@ musicToggle.addEventListener("click", () => {
   if (music.paused) {
     music.play();
     musicToggle.textContent = "❚❚";
-    musicToggle.setAttribute("aria-label","Pausar música");
+    musicToggle.setAttribute("aria-label", "Pausar música");
   } else {
     music.pause();
     musicToggle.textContent = "▶";
-    musicToggle.setAttribute("aria-label","Reproducir música");
+    musicToggle.setAttribute("aria-label", "Reproducir música");
   }
 });
-
 function updateCountdown(){
   const target = new Date(CONFIG.eventDate).getTime();
   const now = Date.now();
