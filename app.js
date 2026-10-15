@@ -258,3 +258,49 @@ $("#noForm").addEventListener("submit", async e => {
 function escapeHtml(str=""){
   return String(str).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
 }
+async function loadMessages() {
+  try {
+    const response = await fetch(
+      CONFIG.appsScriptUrl + "?action=messages&t=" + Date.now()
+    );
+
+    const data = await response.json();
+
+    if (!data.ok || !Array.isArray(data.messages)) {
+      return;
+    }
+
+    const list = document.getElementById("messageList");
+    list.innerHTML = "";
+
+    data.messages.forEach(item => {
+      const card = document.createElement("article");
+
+      card.className = "guest-message";
+      card.dataset.category = item.category || "otros";
+
+      const date = new Date(item.date);
+
+      const formattedDate = date.toLocaleDateString("es-AR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "2-digit"
+      });
+
+      card.innerHTML = `
+        <div>
+          <strong>${escapeHtml(item.name)}</strong>
+          <span>${formattedDate}</span>
+        </div>
+        <p>${escapeHtml(item.message)}</p>
+      `;
+
+      list.appendChild(card);
+    });
+
+  } catch (err) {
+    console.error("No se pudieron cargar los mensajes", err);
+  }
+}
+
+loadMessages();
