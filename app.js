@@ -180,10 +180,6 @@ $("#messageForm").addEventListener("submit", async e => {
 $("#yesForm").addEventListener("submit", async e => {
   e.preventDefault();
 
-  if (localStorage.getItem("juana_rsvp_sent") === "true") {
-    toast("Ya enviaste tu confirmación ✨");
-    return;
-  }
 
   const fd = new FormData(e.target);
 
@@ -203,7 +199,6 @@ $("#yesForm").addEventListener("submit", async e => {
   try {
     await sendToBackend(payload);
 
-    localStorage.setItem("juana_rsvp_sent", "true");
 
     closeModal($("#yesModal"));
     e.target.reset();
@@ -214,6 +209,7 @@ $("#yesForm").addEventListener("submit", async e => {
     toast("No se pudo enviar. Probá nuevamente.");
   }
 });
+
 $("#yesForm").addEventListener("submit", async e => {
   e.preventDefault();
   const fd = new FormData(e.target);
@@ -236,11 +232,6 @@ $("#yesForm").addEventListener("submit", async e => {
 $("#noForm").addEventListener("submit", async e => {
   e.preventDefault();
 
-  if (localStorage.getItem("juana_rsvp_sent") === "true") {
-    toast("Ya enviaste tu respuesta ✨");
-    return;
-  }
-
   const fd = new FormData(e.target);
 
   const payload = {
@@ -253,7 +244,6 @@ $("#noForm").addEventListener("submit", async e => {
   try {
     await sendToBackend(payload);
 
-    localStorage.setItem("juana_rsvp_sent", "true");
 
     closeModal($("#noModal"));
     e.target.reset();
