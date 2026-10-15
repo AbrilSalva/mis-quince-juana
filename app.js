@@ -217,14 +217,34 @@ $("#yesForm").addEventListener("submit", async e => {
 
 $("#noForm").addEventListener("submit", async e => {
   e.preventDefault();
+
+  if (localStorage.getItem("juana_rsvp_sent") === "true") {
+    toast("Ya enviaste tu respuesta ✨");
+    return;
+  }
+
   const fd = new FormData(e.target);
-  const payload={type:"rsvp_no",name:fd.get("name"),message:fd.get("message"),timestamp:new Date().toISOString()};
-  try{
+
+  const payload = {
+    type: "rsvp_no",
+    name: fd.get("name"),
+    message: fd.get("message"),
+    timestamp: new Date().toISOString()
+  };
+
+  try {
     await sendToBackend(payload);
+
+    localStorage.setItem("juana_rsvp_sent", "true");
+
     closeModal($("#noModal"));
     e.target.reset();
+
     toast("Respuesta enviada. Gracias por avisar.");
-  }catch(err){toast("No se pudo enviar. Probá nuevamente.");}
+
+  } catch(err) {
+    toast("No se pudo enviar. Probá nuevamente.");
+  }
 });
 
 function escapeHtml(str=""){
