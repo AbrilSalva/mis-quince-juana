@@ -177,25 +177,43 @@ $("#messageForm").addEventListener("submit", async e => {
     toast("No se pudo enviar. Probá nuevamente.");
   }
 });
+$("#yesForm").addEventListener("submit", async e => {
+  e.preventDefault();
 
-let guestCount=1;
-function renderGuestFields(){
-  $("#guestCount").textContent=guestCount;
-  $("#guestFields").innerHTML=Array.from({length:guestCount},(_,i)=>`
-    <div class="guest-box">
-      <h4>INVITADO ${i+1}</h4>
-      <label>Nombre y apellido
-        <input name="guest_${i+1}_name" required placeholder="Nombre completo">
-      </label>
-      <label>Restricciones alimentarias / Aclaraciones
-        <input name="guest_${i+1}_restrictions" placeholder="Ej: vegetariano, celíaco, etc.">
-      </label>
-    </div>`).join("");
-}
-renderGuestFields();
-$("#minusGuest").addEventListener("click",()=>{guestCount=Math.max(1,guestCount-1);renderGuestFields();});
-$("#plusGuest").addEventListener("click",()=>{guestCount=Math.min(8,guestCount+1);renderGuestFields();});
+  if (localStorage.getItem("juana_rsvp_sent") === "true") {
+    toast("Ya enviaste tu confirmación ✨");
+    return;
+  }
 
+  const fd = new FormData(e.target);
+
+  const payload = {
+    type: "rsvp_yes",
+    guestCount: 1,
+    guests: [
+      {
+        name: fd.get("name"),
+        restrictions: fd.get("restrictions")
+      }
+    ],
+    message: fd.get("message"),
+    timestamp: new Date().toISOString()
+  };
+
+  try {
+    await sendToBackend(payload);
+
+    localStorage.setItem("juana_rsvp_sent", "true");
+
+    closeModal($("#yesModal"));
+    e.target.reset();
+
+    toast("Asistencia confirmada ✨");
+
+  } catch(err) {
+    toast("No se pudo enviar. Probá nuevamente.");
+  }
+});
 $("#yesForm").addEventListener("submit", async e => {
   e.preventDefault();
   const fd = new FormData(e.target);
