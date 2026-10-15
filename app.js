@@ -175,6 +175,7 @@ $("#messageForm").addEventListener("submit", async e => {
     toast("Mensaje enviado 💚");
   }catch(err){
     toast("No se pudo enviar. Probá nuevamente.");
+    setTimeout(loadMessages, 1000);
   }
 });
 $("#yesForm").addEventListener("submit", async e => {
